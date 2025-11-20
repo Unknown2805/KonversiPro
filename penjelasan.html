@@ -11,7 +11,6 @@
 </head>
 <body class="text-slate-100 min-h-screen antialiased body-cara">
 
-  <!-- NAV -->
     <nav class="backdrop-blur-sm bg-[#00000033] border-b border-[#ffffff10] py-4 px-6 fixed w-full z-30 neon">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -20,26 +19,47 @@
                 </div>
                 <span class="text-xl font-bold glow">KonversiPro</span>
             </div>
-            <ul class="flex gap-6">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="konversi.html">Conversion</a></li>
-                <li><a href="penjelasan.html">How?</a></li>
-                <li><a href="about.html">About Us</a></li>
+
+             <ul class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-[#1FB6FF] transition">Dashboard</a></li>
+                <li><a href="konversi.html" class="hover:text-[#1FB6FF] transition">Conversion</a></li>
+                <li><a href="penjelasan.html" class="hover:text-[#1FB6FF] transition">How?</a></li>
+                <li><a href="about.html" class="hover:text-[#1FB6FF] transition">About Us</a></li>
             </ul>
+
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0b1220fa] backdrop-blur-xl border-b border-[#ffffff10] p-4 flex flex-col gap-4 shadow-2xl">
+            <a href="index.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">Dashboard</a>
+            <a href="konversi.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">Conversion</a>
+            <a href="penjelasan.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">How?</a>
+            <a href="about.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">About Us</a>
         </div>
     </nav>
 
     <main class="pt-28">
         <div class="max-w-4xl mx-auto px-6 pb-12">
-            <section class="card rounded-2xl p-8 neon card-float">
-                <h2 class="text-3xl font-bold mb-4">Penjelasan Konversi</h2>
+            <section class="card rounded-2xl p-6 md:p-8 neon card-float">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Penjelasan Konversi</h2>
                 <div id="notice" class="text-slate-300 mb-4">Memuat data dari localStorage...</div>
-                <div id="explainArea" class="grid grid-cols-1 gap-6"></div>
+                <div id="explainArea" class="grid grid-cols-1 gap-6 overflow-x-auto"></div>
             </section>
         </div>
     </main>
 
     <script src="./Assets/penjelasan.js"></script>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>

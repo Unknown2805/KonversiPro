@@ -8,8 +8,6 @@
     <title>KonversiPro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./Assets/style.css">
-   
-
 </head>
 <body class="text-slate-100 min-h-screen antialiased body-konv">
 
@@ -21,44 +19,65 @@
                 </div>
                 <span class="text-lg font-bold">KonversiPro</span>
             </div>
-            <ul class="flex gap-6">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="konversi.html">Conversion</a></li>
-                <li><a href="penjelasan.html">How?</a></li>
-                <li><a href="about.html">About Us</a></li>
+
+             <ul class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-[#1FB6FF] transition">Dashboard</a></li>
+                <li><a href="konversi.html" class="hover:text-[#1FB6FF] transition">Conversion</a></li>
+                <li><a href="penjelasan.html" class="hover:text-[#1FB6FF] transition">How?</a></li>
+                <li><a href="about.html" class="hover:text-[#1FB6FF] transition">About Us</a></li>
             </ul>
+
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0b1220fa] backdrop-blur-xl border-b border-[#ffffff10] p-4 flex flex-col gap-4 shadow-2xl">
+            <a href="index.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">Dashboard</a>
+            <a href="konversi.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">Conversion</a>
+            <a href="penjelasan.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">How?</a>
+            <a href="about.html" class="block py-2 px-4 rounded hover:bg-[#ffffff10]">About Us</a>
         </div>
     </nav>
 
     <main class="pt-24">
         <div class="max-w-xl mx-auto px-6">
-            <section class="bg-[#0b1220bb] border border-[#ffffff10] rounded-2xl p-8 neon card-float">
-                <h2 class="text-3xl font-bold mb-6">Conversion</h2>
+            <section class="bg-[#0b1220bb] border border-[#ffffff10] rounded-2xl p-6 md:p-8 neon card-float">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Conversion</h2>
 
                 <label class="block mb-2 text-slate-300">Select Input Type</label>
                 <div class="grid grid-cols-2 gap-3 mb-4">
-                    <button id="optBin" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption">Binary</button>
-                    <button id="optDec" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption">Decimal</button>
-                    <button id="optOct" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption">Oktal</button>
-                    <button id="optHex" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption">Hexadecimal</button>
+                    <button id="optBin" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption text-sm md:text-base">Binary</button>
+                    <button id="optDec" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption text-sm md:text-base">Decimal</button>
+                    <button id="optOct" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption text-sm md:text-base">Oktal</button>
+                    <button id="optHex" class="py-2 rounded-md bg-[#0f1724] border border-[#ffffff08] neonOption text-sm md:text-base">Hexadecimal</button>
                 </div>
 
                 <label class="block mb-2 text-slate-300">Input Number</label>
                 <input id="inputNumber" class="w-full p-3 rounded-md bg-[#071532] border border-[#ffffff06] mb-4" placeholder="Example: 1010(2) Or 20(8) Or AF(16)" autocomplete="off">
 
-                <div class="flex gap-3">
+                <div class="flex flex-col sm:flex-row gap-3">
                     <button id="convertBtn" class="flex-1 py-3 rounded-md neonBtn bg-gradient-to-r from-[#4E2BFF] to-[#1FB6FF] text-black font-semibold">
                         Convert & Save
                     </button>
-                    <button id="previewExplain" class="w-40 py-3 rounded-md border border-[#ffffff12] glow neonBtn">See Explanation</button>
+                    <button id="previewExplain" class="w-full sm:w-40 py-3 rounded-md border border-[#ffffff12] glow neonBtn">See Explanation</button>
                 </div>
 
-                <div id="resultBox" class="mt-6 p-4 bg-[#051022] border border-[#ffffff06] rounded-md text-slate-100"></div>
+                <div id="resultBox" class="mt-6 p-4 bg-[#051022] border border-[#ffffff06] rounded-md text-slate-100 overflow-x-auto"></div>
             </section>
         </div>
     </main>
 
     <script src="./Assets/konversi.js"></script>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
