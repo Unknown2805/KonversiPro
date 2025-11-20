@@ -1,0 +1,45 @@
+    .body-dash { background: radial-gradient(1200px 600px at 10% 20%, #0b1020 0%, #0b1333 25%, #241445 60%, #2e1b5a 100%); }
+    .body-konv { background: linear-gradient(120deg,#04060a,#0b1230 40%, #1b0740 100%); color:#e8eefb; }
+    .body-cara { background: linear-gradient(120deg,#020316,#10112a 40%, #240a3a 100%); color:#e9f2ff; }
+    .body-about { background: linear-gradient(120deg,#040316,#160b2a 50%, #2d063a 100%); color:#eaf4ff; }
+
+
+    .neon { box-shadow: 0 6px 30px rgba(78, 43, 255, 0.18), 0 0 20px rgba(78, 43, 255, 0.08) inset; }
+    .neonBtn { box-shadow: 0 8px 40px rgba(30,147,255,0.14); }
+    .glow { text-shadow: 0 4px 24px rgba(78,43,255,0.25); }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.05); }
+    pre { background: rgba(0,0,0,0.25); padding:12px; border-radius:8px; overflow:auto; }
+    
+    
+    @keyframes floaty {
+        from { transform: translateY(6px); }
+        to   { transform: translateY(-6px); }
+    }
+    .card-float {
+        animation: floaty 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes neonPulse {
+        0% {
+            box-shadow: 0 0 4px #4E2BFF, 0 0 8px #4E2BFF33, inset 0 0 4px #4E2BFF55;
+            border-color: #4E2BFF55;
+        }
+        50% {
+            box-shadow: 0 0 12px #4E2BFF, 0 0 24px #4E2BFF55, inset 0 0 10px #4E2BFF88;
+            border-color: #4E2BFFAA;
+        }
+        100% {
+            box-shadow: 0 0 4px #4E2BFF, 0 0 8px #4E2BFF33, inset 0 0 4px #4E2BFF55;
+            border-color: #4E2BFF55;
+        }
+    }
+    .neonOption {
+        border: 1px solid #4E2BFF55;
+        animation: neonPulse 2.2s ease-in-out infinite;
+        transition: 0.2s;
+    }
+    .neonOption:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px #4E2BFF;
+    background: linear-gradient(120deg,#04060a,#0b1230 40%, #1b0740 100%)
+    }
+    

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <link rel="icon" type="image/png" href="image.png">
+    <title>KonversiPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./Assets/style.css">
+
+</head>
+<body class="text-slate-100 min-h-screen antialiased body-dash">
+
+    <nav class="backdrop-blur-sm bg-[#00000033] border-b border-[#ffffff10] py-4 px-6 fixed w-full z-30 neon">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#4E2BFF] to-[#1FB6FF] flex items-center justify-center neon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </div>
+                <span class="text-xl font-bold glow">KonversiPro</span>
+            </div>
+
+            <ul class="flex gap-6">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="konversi.html">Conversion</a></li>
+                <li><a href="penjelasan.html">How?</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="pt-28">
+        <div class="max-w-4xl mx-auto px-6">
+            <section class="bg-[#0c1226]/70 backdrop-blur-xl border border-[#ffffff15] rounded-3xl p-10 neon card-float">
+
+                <!-- Header Dashboard -->
+                <div class="mb-10">
+                    <h1 class="text-4xl font-extrabold glow mb-3">Dashboard</h1>
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">
+                    A modern workspace for managing your number system conversions. 
+                    Convert values across Binary, Decimal, Octal, and Hexadecimal formats,
+                    and access detailed computational breakdowns anytime.
+                    </p>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="p-7 rounded-2xl border border-[#ffffff12] bg-gradient-to-br from-[#0f1b35] to-[#0b162b] relative overflow-hidden group">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#4e2bff33] blur-2xl rounded-full transition-all duration-500 group-hover:scale-125"></div>
+
+                            <div class="flex items-center gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#4E2BFF]/20 border border-[#4E2BFF]/40 flex items-center justify-center">
+                                <svg width="26" height="26" fill="none" stroke="#8ea0ff" stroke-width="1.8" viewBox="0 0 24 24">
+                                    <path d="M4 12h16M12 4v16"/>
+                                </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold">Last Conversion</h3>
+                            </div>
+
+                        <div id="lastInfo" class="text-slate-300 text-lg">No data recorded yet.</div>
+                    </div>
+
+                    <div class="p-7 rounded-2xl border border-[#ffffff12] bg-gradient-to-br from-[#241445] to-[#1b0d2f] relative overflow-hidden group">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#4e2bff22] blur-2xl rounded-full transition-all duration-500 group-hover:scale-125"></div>
+
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-[#1FB6FF]/20 border border-[#1FB6FF]/40 flex items-center justify-center">
+                            <svg width="26" height="26" fill="none" stroke="#7ddaff" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Quick Actions</h3>
+                        </div>
+
+                        <div class="flex gap-4 mt-3">
+                            <a href="konversi.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-[#4E2BFF] to-[#1FB6FF] font-semibold text-black shadow-md hover:shadow-xl transition">
+                            Open Converter
+                            </a>
+                            <a href="penjelasan.html" class="px-4 py-2 rounded-lg border border-[#ffffff22] text-slate-100 hover:bg-white/10 transition">
+                            View Explanation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <script src="./Assets/dashboard.js"></script>
+</body>
+</html>
