@@ -49,11 +49,11 @@ document.getElementById('convertBtn').addEventListener('click', ()=>{
     const dec = toDecimal(parsed.number, parsed.base);
     if(Number.isNaN(dec)){ out.textContent = 'Gagal mengonversi. Pastikan angka valid untuk basis yang dipilih.'; return; }
     const all = formatAll(dec);
-    out.innerHTML = `<div class="font-semibold mb-2">Hasil (disimpan ke lokal):</div>
-    <div>Biner: <span class="font-mono">${all.bin}</span></div>
-    <div>Desimal: <span class="font-mono">${all.dec}</span></div>
-    <div>Oktal: <span class="font-mono">${all.oct}</span></div>
-    <div>Heksadesimal: <span class="font-mono">${all.hex}</span></div>`;
+    out.innerHTML = `<div class="font-semibold mb-2">Result :</div>
+    <div>Binary: <span class="font-mono">${all.bin}</span></div>
+    <div>Decimal: <span class="font-mono">${all.dec}</span></div>
+    <div>Octal: <span class="font-mono">${all.oct}</span></div>
+    <div>Hexadecimal: <span class="font-mono">${all.hex}</span></div>`;
     // save to localStorage
     localStorage.setItem('konv_number', parsed.number);
     localStorage.setItem('konv_base', String(parsed.base));
