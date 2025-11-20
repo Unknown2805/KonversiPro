@@ -45,9 +45,9 @@ document.getElementById('convertBtn').addEventListener('click', ()=>{
     const raw = document.getElementById('inputNumber').value.trim();
     const parsed = parseInputAuto(raw, forcedBase);
     const out = document.getElementById('resultBox');
-    if(!parsed){ out.textContent = 'Input tidak dikenali. Gunakan format seperti 20(8) atau AF (jika hexa).'; return; }
+    if(!parsed){ out.textContent = 'Input unknown..'; return; }
     const dec = toDecimal(parsed.number, parsed.base);
-    if(Number.isNaN(dec)){ out.textContent = 'Gagal mengonversi. Pastikan angka valid untuk basis yang dipilih.'; return; }
+    if(Number.isNaN(dec)){ out.textContent = 'Conversion Failed.'; return; }
     const all = formatAll(dec);
     out.innerHTML = `<div class="font-semibold mb-2">Result :</div>
     <div>Binary: <span class="font-mono">${all.bin}</span></div>
